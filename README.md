@@ -1,5 +1,8 @@
 # BarrenLand
 
+Requirements:
+* Must have JAVA 8 installed and JAVA_HOME must be set to JAVA 8 directory
+
 To run the application, perform the following:
 * mvn clean install
 * cd into target directory

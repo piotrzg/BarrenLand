@@ -24,6 +24,11 @@ public class BarrenLand
 {
 	public static void main(String[] args)
 	{
+		process(args);
+	}
+	
+	public static List<Integer> process(String[] args)
+	{
 		int[][] barrenCoords = Parser.parse(args);
 		boolean[][] isBarrenSquare = markBarrenSquares(barrenCoords);
 
@@ -79,6 +84,8 @@ public class BarrenLand
 			System.out.print(usableArea);
 			System.out.print(" ");
 		}
+
+		return usableLandAreas;
 	}
 
 	private static void addNorthEdge(Graph g, int currentVertice)

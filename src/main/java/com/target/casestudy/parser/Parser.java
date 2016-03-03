@@ -9,6 +9,11 @@ public class Parser
 {
 	public static int[][] parse(String[] args)
 	{
+		if (args == null || args.length == 0)
+		{
+			return null;
+		}
+
 		int[][] barrenCoords = new int[args.length][4];
 
 		for (int i = 0; i < args.length; i++)
@@ -20,7 +25,7 @@ public class Parser
 			barrenCoords[i][XNE] = Integer.parseInt(coords[2]);
 			barrenCoords[i][YNE] = Integer.parseInt(coords[3]);
 		}
-		
+
 		return barrenCoords;
 	}
 }

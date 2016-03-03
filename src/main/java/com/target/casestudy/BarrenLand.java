@@ -26,10 +26,17 @@ public class BarrenLand
 	{
 		process(args);
 	}
-	
+
 	public static List<Integer> process(String[] args)
 	{
 		int[][] barrenCoords = Parser.parse(args);
+
+		if (barrenCoords == null)
+		{
+			System.out.print(" ");
+			return null;
+		}
+
 		boolean[][] isBarrenSquare = markBarrenSquares(barrenCoords);
 
 		Graph g = new Graph();
@@ -77,9 +84,9 @@ public class BarrenLand
 		}
 
 		List<Integer> usableLandAreas = bfs(g);
-		
+
 		Collections.sort(usableLandAreas);
-		for(Integer usableArea : usableLandAreas)
+		for (Integer usableArea : usableLandAreas)
 		{
 			System.out.print(usableArea);
 			System.out.print(" ");
@@ -164,7 +171,7 @@ public class BarrenLand
 
 			usableLandAreas.add(subgraph.vertextEdges.keySet().size());
 		}
-		
+
 		return usableLandAreas;
 	}
 }
